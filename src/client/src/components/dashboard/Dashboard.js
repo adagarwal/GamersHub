@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import Background from './DivBackground.png';
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -10,8 +11,9 @@ class Dashboard extends Component {
 render() {
     const { user } = this.props.auth;
 return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div style={{ height: "75vh" }}>
         <div className="row">
+          <img src={Background} className="left-align"  style={{ height: "10vh", width:"100%"}}></img>
           <div className="col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
