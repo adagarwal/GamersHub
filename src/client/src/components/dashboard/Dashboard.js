@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Background from './DivBackground.png';
 import LogoWhite from './logoWhite.png';
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+//import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -18,7 +18,7 @@ return (
         <div className="row">
           <div className="left-align"  style={{ height: "10vh", width:"100%", backgroundColor:'black', marginTop:0}}>
             <img src={LogoWhite} style={{ height: "10vh", marginLeft:"2vh"}}></img>
-            Welcome,{user.name.split(" ")[0]}
+            Welcome,{user.name.split(" ")[0]}!
           </div>
           <div className="row center-align" style={{height:"90vh", marginTop:0}}>
             <div className="col s1" style={{ height:"90vh", backgroundColor:'#196658'}}> </div>
