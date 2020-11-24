@@ -23,57 +23,74 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     return (
       <div >
-        <div className="row" style={{backgroundColor: "gray"}}>
+        <div className="row" style={{backgroundColor: "#99aab5"}}>
           <div
             className="row left-align"
             style={{
-              height: "10vh",
+              height: "12vh",
               width: "100%",
-              backgroundColor: "black",
+              backgroundColor: "#23272a",
               marginTop: 0,
+              marginBottom: 0,
             }}
           >
             <div className="col s1 left-align" style={{marginBottom: 0}}>
               <img
                 src={LogoWhite}
-                style={{ height: "10vh", marginLeft: "2vh" }}
+                style={{ height: "10vh", marginLeft: "2vh", marginTop: "1vh" }}
               ></img>
             </div>
             <div className="col s11 right-align" style={{marginBottom: 0}}>
               <div className="col s11 right-align">
-                <h5 className="right-align " style={{ color: "white" }}>
+                <h5 className="right-align " style={{ color: "#7289da", marginTop: "4vh" }}>
                   {" "}
                   Welcome, {user.name.split(" ")[0]}!{" "}
                 </h5>
               </div>
               <div className="col s1 right-align">
-                <img src={AccountLogo} style={{ height: "8vh", marginLeft: "2vh", paddingTop: "10px"}}></img>
+                <img src={AccountLogo} style={{ height: "8vh", marginLeft: "2vh", marginTop: "2vh"}}></img>
               </div>
             </div>
           </div>
-          <div className="row center-align" style={{ height: "70vh" }}>
+          <div className="row center-align" style={{ height: "83vh",marginBottom:0 }}>
             <div
               className="col s1"
-              style={{ height: "80vh", backgroundColor: "#196658" }}
+              style={{ height: "85vh", backgroundColor: "#2c2f33", width: "20vh", marginBottom: 0}}
             >
-            <div className="left-align">
-                <img src={HomeLogo} style={{height: "8vh", paddingTop: "20px"}} />
-                <h7 style={{color: "white", paddingLeft:"5px", fontSize: "90%"}}>Home</h7>
+            <div className="left-align" style={{paddingTop: "10px",paddingLeft: "40px"}}>
+                <div className="left-align">
+                	<img src={HomeLogo} style={{height: "5vh", marginTop: "2vh"}} />
+		</div>
+                <div className="left-align">
+                	<h7 style={{ color: "#7289da", paddingTop: "20px", fontSize: "100%"}}>Home</h7>
+		</div>
             </div>
 
-            <div className="left-align">
-                <img src={GameLogo} style={{height: "8vh", paddingTop: "20px"}} />
-                <h7 style={{color: "white", paddingLeft:"5px", fontSize: "90%"}}>Game</h7>
+            <div className="left-align" style={{paddingTop: "10px",paddingLeft: "40px"}}>
+                <div className="left-align">
+                	<img src={GameLogo} style={{height: "5vh", marginTop: "2vh"}} />
+                </div>
+                <div className="left-align">
+                	<h7 style={{color: "#7289da", paddingTop:"20px", fontSize: "100%"}}>Game</h7>
+		</div>
             </div>
 
-            <div className="left-align">
-                <img src={StreamLogo} style={{height: "8vh", paddingTop: "20px"}} />
-                <h7 style={{color: "white", paddingLeft:"5px", fontSize: "90%"}}>Stream</h7>
+            <div className="left-align" style={{paddingTop: "10px", paddingLeft: "40px"}}>
+                <div className="left-align">
+                	<img src={StreamLogo} style={{height: "5vh", marginTop: "2vh"}} />
+                </div>
+                <div className="left-align">
+                	<h7 style={{color: "#7289da", paddingTop:"20px", fontSize: "100%"}}>Stream</h7>
+		</div>
             </div>
 
-            <div className="left-align">
-                <img src={HelpLogo} style={{height: "8vh", paddingTop: "20px"}} />
-                <h7 style={{color: "white", paddingLeft:"5px", fontSize: "90%"}}>Help</h7>
+            <div className="left-align" style={{paddingTop: "10px", paddingLeft: "40px"}}>
+                <div className="left-align">
+                	<img src={HelpLogo} style={{height: "5vh", marginTop: "2vh"}} />
+		</div>
+                <div className="left-align">
+                	<h7 style={{color: "#7289da", paddingTop:"20px", fontSize: "100%"}}>Help</h7>
+		</div>
             </div>
             </div>
             <div className="col s10" style={{ paddingLeft: "5vh" }}>
