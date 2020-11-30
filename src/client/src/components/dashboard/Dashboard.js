@@ -14,10 +14,9 @@ import EpicLogo from './EpicLogo.png';
 import TwitchLogo from './TwitchLogo.png';
 import GameLogo from './GameLogo.png';
 import StreamLogo from './StreamLogo.png';
+import DropDownParent from './DropDownParent.js';
 
 //import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-
-const sampleData = new Array(2).fill("Test");
 
 class Dashboard extends Component {
   onLogoutClick = (e) => {
@@ -26,6 +25,7 @@ class Dashboard extends Component {
   };
   render() {
     const { user } = this.props.auth;
+
     const gotoHome = () => {
         window.alert("HOME!");
     }
@@ -69,7 +69,7 @@ class Dashboard extends Component {
                 </h5>
               </div>
               <div className="col s1 right-align">
-                  <img src={AccountLogo} style={{ height: "8vh", marginLeft: "2vh", marginTop: "2vh"}}></img>
+                  <DropDownParent></DropDownParent>
               </div>
             </div>
           </div>
@@ -131,13 +131,14 @@ class Dashboard extends Component {
               <StreamersCarousel className="col s10"></StreamersCarousel>
             </div>
 
-            
+
           </div>
         </div>
       </div>
     );
   }
 }
+
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,

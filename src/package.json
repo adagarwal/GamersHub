@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@szhsin/react-menu": "^1.0.2",
     "@trendmicro/react-sidenav": "^0.5.0",
     "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
