@@ -2,7 +2,6 @@ import React, { useState, Component } from "react";
 import { connect } from "react-redux";
 import { Dropdown, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import PropTypes from "prop-types";
-import styles from './App.css';
 import { logoutUser } from "../../actions/authActions";
 
 const liCls =
