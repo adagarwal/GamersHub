@@ -8,7 +8,7 @@ const DropDownParent = () => {
   const [open, setOpen] = React.useState(false);
   const drop = React.useRef(null);
   function handleClick(e){
-    if(!e.target.closest(`.${drop.current.className}`) && open){
+    if(drop.current != null && !e.target.closest(`.${drop.current.className}`) && open){
       setOpen(false);
     }
   }

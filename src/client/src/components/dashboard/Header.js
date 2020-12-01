@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import LogoWhite from "./logoWhite.png";
-import DropDownParent from './DropDownParent.js';
+import {connect} from "react-redux";
+import DropDownParent from "./DropDownParent";
 
 class HeaderBar extends Component {
     render() {
+        const { user } = this.props.auth;
         return (
             <div
                 className="row left-align"
@@ -27,11 +29,11 @@ class HeaderBar extends Component {
                     <div className="col s11 right-align">
                         <h5 className="right-align " style={{ color: "#7289da", marginTop: "4vh" }}>
                             {" "}
-      Welcome !{" "}
+                            Welcome, {user.name.split(" ")[0]}!{" "}
                         </h5>
                     </div>
                     <div className="col s1 right-align">
-                        {/*<DropDownParent></DropDownParent>*/}
+                        <DropDownParent></DropDownParent>
                     </div>
                 </div>
             </div>
@@ -39,4 +41,11 @@ class HeaderBar extends Component {
     }
 }
 
-export default HeaderBar;
+HeaderBar.propTypes = {
+    auth: PropTypes.object.isRequired,
+};
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+});
+
+export default connect(mapStateToProps)(HeaderBar);
