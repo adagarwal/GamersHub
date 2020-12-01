@@ -17,27 +17,29 @@ class GamesCarousel extends Component {
     }
 
     componentDidMount() {
-        const listGames = ['730', '584220', '584370', '584400', '577320', '575760', '571340', '568840']
+
         const setState = this.setState.bind(this)
-        for(const id of listGames){
-            let endpoint = "/api/steam/featuredgames?id="+id
+        const endpoint = "/api/steam/featuredgames"
             axios
                 .get(endpoint)
-                .then(res=>{this.state.dataset.push(res); setState({data:res})});
-        }
+                .then(res=>{setState({data:res.data})});
+
     }
 
     render(){
-        if(this.state.dataset.length == 0){
+        if(this.state.data == null){
             return(<div>Loading</div>);
         }
-        let size = this.state.dataset.length
-        const jsonData = JSON.parse(JSON.stringify(this.state.dataset[size-1].data))
+
+        const jsonData = JSON.parse(JSON.stringify(this.state.data.results))
+        console.log(jsonData[0].image);
         const urls = []
-        for (let i=0; i<this.state.dataset.length; i++){
-            let thumbnail = this.state.dataset[i].data.header_image
-            console.log(thumbnail)
-            urls.push(<div key={i}><img  src={thumbnail} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
+        for (let i=0; i<jsonData.length; i++){
+            if(jsonData[i].image !=null){
+                let thumbnail = jsonData[i].image.original
+                console.log(thumbnail)
+                urls.push(<div key={i}><img  src={thumbnail} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
+            }
         }
         return (
             <div className="GamesCarousel" >
