@@ -14,41 +14,39 @@ class StreamersCarousel extends Component {
             data: null
         }
     }
+
     componentDidMount(){
         const endpoint = "/api/twitch/featuredstreams";
         const setState = this.setState.bind(this);
         axios
             .get(endpoint)
-            .then(res=>{setState({data:res})});
+            .then(res=>{setState({data:res.data})});
     }
+
+
     render() {
         if(this.state.data == null){
             return(<div>Loading</div>);
         }
-         //JSON.parse(this.state.data);
-        const {abc} = JSON.parse(JSON.stringify(this.state.data));
-        console.log(abc);
+
+        const jsonData = JSON.parse(JSON.stringify(this.state.data));
+        const urls = []
+        for (let i=0; i<jsonData.data.length; i++){
+            let thumbnail = jsonData.data[i].thumbnail_url
+            thumbnail = thumbnail.replace('{width}','600')
+            thumbnail = thumbnail.replace('{height}','400')
+            urls.push(<div key={i}><img  src={thumbnail} className="image" style={{height:"25vh", width:"40vh"}}></img></div>)
+        }
         return (
             <div>
                 {
                     <div className="StreamersCarousel" >
                             <Slider
                                 dots={true}
-                                slidesToShow={6}
+                                slidesToShow={3}
                                 arrows={true}
-
                             >
-                                <div>${JSON.stringify(this.state.data)}</div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-                                <div ><img src="https://placekitten.com/300/300" className="image" style={{height:"30vh"}}></img></div>
-
-
+                                {urls}
 
                             </Slider>
                         </div>
