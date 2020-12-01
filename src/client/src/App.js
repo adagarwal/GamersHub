@@ -11,6 +11,10 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import SteamHome from "./components/dashboard/SteamHome";
+import EpicHome from "./components/dashboard/EpicHome";
+import TwitchHome from "./components/dashboard/TwitchHome";
+import SupportHome from "./components/dashboard/SupportHome";
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -40,6 +44,10 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/steamhome" component={SteamHome} />
+              <PrivateRoute exact path="/epichome" component={EpicHome} />
+              <PrivateRoute exact path="/twitchhome" component={TwitchHome} />
+              <PrivateRoute exact path="/supporthome" component={SupportHome} />
             </Switch>
           </div>
         </Router>
