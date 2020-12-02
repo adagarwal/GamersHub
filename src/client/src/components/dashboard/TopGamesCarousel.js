@@ -36,7 +36,7 @@ class TopGamesCarousel extends Component {
             let game = jsonData.data[i].name;
             thumbnail = thumbnail.replace('{width}','600');
             thumbnail = thumbnail.replace('{height}','400');
-            urls.push(<div key={i}></a><img  src={thumbnail} title={game} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
+            urls.push(<div key={i}><img  src={thumbnail} title={game} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
         }
         return (
             <div>

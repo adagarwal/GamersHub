@@ -33,10 +33,11 @@ class StreamersCarousel extends Component {
         const urls = []
         for (let i=0; i<jsonData.data.length; i++){
             let thumbnail = jsonData.data[i].thumbnail_url;
+            let title = jsonData.data[i].title;
             if (thumbnail != null) {
             thumbnail = thumbnail.replace('{width}','600');
             thumbnail = thumbnail.replace('{height}','400');
-            urls.push(<div key={i}><img  src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}}></img></div>)
+            urls.push(<div key={i}><img title={title} src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}}></img></div>)
             }
         }
         return (
