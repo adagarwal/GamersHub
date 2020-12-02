@@ -37,7 +37,8 @@ class StreamersCarousel extends Component {
             if (thumbnail != null) {
             thumbnail = thumbnail.replace('{width}','600');
             thumbnail = thumbnail.replace('{height}','400');
-            urls.push(<div key={i}><img title={title} src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}}></img></div>)
+            let redirectUrl = "http://www.twitch.tv/" + jsonData.data[i].user_name;
+            urls.push(<div key={i}> <a href={redirectUrl} target="_blank"> <img title={title} src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}}></img> </a> </div>)
             }
         }
         return (

@@ -32,14 +32,13 @@ class GamesCarousel extends Component {
         }
 
         const jsonData = JSON.parse(JSON.stringify(this.state.data.results))
-        console.log(jsonData[0]);
         const urls = []
         for (let i=0; i<20; i++){
-            if(jsonData[i].image !=null){
+            if(jsonData[i].image !=null ){
                 let thumbnail = jsonData[i].image.original;
                 let name = jsonData[i].name;
-                console.log(thumbnail)
-                urls.push(<div key={i}><img title={name} src={thumbnail} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
+                let redirectUrl = jsonData[i].site_detail_url;
+                urls.push(<div key={i}><a href={redirectUrl} target="_blank"><img title={name} src={thumbnail} className="image" style={{height:"20vh", width:"30vh"}}></img></a></div>)
             }
         }
         return (

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,8 +37,19 @@ class TopGamesCarousel extends Component {
             let game = jsonData.data[i].name;
             thumbnail = thumbnail.replace('{width}','600');
             thumbnail = thumbnail.replace('{height}','400');
-            urls.push(<div key={i}><img  src={thumbnail} title={game} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
+            let redirectUrl = "http://www.twitch.tv/directory/game/" + jsonData.data[i].name;
+            urls.push(<div key={i}><a href={redirectUrl} target="_blank"> <img  src={thumbnail} title={game} className="image" style={{height:"20vh", width:"30vh"}}></img> </a></div> )
         }
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log("HELLLLLLLLLLLLLLLLLLL")
+        console.log(jsonData.data[0])
         return (
             <div>
                 {
