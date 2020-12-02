@@ -40,16 +40,6 @@ class TopGamesCarousel extends Component {
             let redirectUrl = "http://www.twitch.tv/directory/game/" + jsonData.data[i].name;
             urls.push(<div key={i}><a href={redirectUrl} target="_blank"> <img  src={thumbnail} title={game} className="image" style={{height:"20vh", width:"30vh"}}></img> </a></div> )
         }
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log("HELLLLLLLLLLLLLLLLLLL")
-        console.log(jsonData.data[0])
         return (
             <div>
                 {
