@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 
-class StreamersCarousel extends Component {
+class TopGamesCarousel extends Component {
     constructor(){
         super();
         this.state = {
@@ -16,7 +16,7 @@ class StreamersCarousel extends Component {
     }
 
     componentDidMount(){
-        const endpoint = "/api/twitch/featuredstreams";
+        const endpoint = "/api/twitchTopGames/topgames";
         const setState = this.setState.bind(this);
         axios
             .get(endpoint)
@@ -31,21 +31,20 @@ class StreamersCarousel extends Component {
 
         const jsonData = JSON.parse(JSON.stringify(this.state.data));
         const urls = []
-        for (let i=0; i<jsonData.data.length; i++){
-            let thumbnail = jsonData.data[i].thumbnail_url;
-            if (thumbnail != null) {
+        for (let i=0; i<20; i++){
+            let thumbnail = jsonData.data[i].box_art_url;
+            let game = jsonData.data[i].name;
             thumbnail = thumbnail.replace('{width}','600');
             thumbnail = thumbnail.replace('{height}','400');
-            urls.push(<div key={i}><img  src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}}></img></div>)
-            }
+            urls.push(<div key={i}></a><img  src={thumbnail} title={game} className="image" style={{height:"20vh", width:"30vh"}}></img></div>)
         }
         return (
             <div>
                 {
-                    <div className="StreamersCarousel" >
+                    <div className="TopGamesCarousel" >
                             <Slider
                                 dots={true}
-                                slidesToShow={4}
+                                slidesToShow={5}
                                 arrows={true}
                             >
                                 {urls}
@@ -57,4 +56,4 @@ class StreamersCarousel extends Component {
     }
 }
 
-export default StreamersCarousel;
+export default TopGamesCarousel;

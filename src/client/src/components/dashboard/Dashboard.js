@@ -6,6 +6,7 @@ import GamersCarousel from "./GamesCarousel.js";
 import StreamersCarousel from "./StreamersCarousel.js";
 import HeaderBar from './Header.js';
 import NavPane from './NavPane.js';
+import TopGamesCarousel from "./TopGamesCarousel";
 
 class Dashboard extends Component {
   onLogoutClick = (e) => {
@@ -22,15 +23,20 @@ class Dashboard extends Component {
             <NavPane></NavPane>
 
             <div className="col s10" style={{ paddingLeft: "5vh" }}>
-              <h6 className="left-align">Latest Releases</h6>
-              <GamersCarousel className="col s10" ></GamersCarousel>
+              <h6 className="left-align" style={{color:"#7289da", backgroundColor: "#23272a"}}><b>Top Games</b></h6>
+              <TopGamesCarousel className="col s10"></TopGamesCarousel>
             </div>
 
             <div className="col s10" style={{ paddingLeft: "5vh" }}>
-              <h6 className="left-align">Latest Releases</h6>
+              <h6 className="left-align" style={{color:"#7289da", backgroundColor: "#23272a"}}><b>Top Streams</b></h6>
               <StreamersCarousel className="col s10"></StreamersCarousel>
             </div>
             
+            <div className="col s10" style={{ paddingLeft: "5vh" }}>
+              <h6 className="left-align" style={{color:"#7289da", backgroundColor: "#23272a"}}><b>Latest Releases</b></h6>
+              <GamersCarousel className="col s10" ></GamersCarousel>
+            </div>
+
           </div>
         </div>
       </div>

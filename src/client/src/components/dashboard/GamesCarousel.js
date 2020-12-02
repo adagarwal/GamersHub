@@ -34,7 +34,7 @@ class GamesCarousel extends Component {
         const jsonData = JSON.parse(JSON.stringify(this.state.data.results))
         console.log(jsonData[0].image);
         const urls = []
-        for (let i=0; i<jsonData.length; i++){
+        for (let i=0; i<20; i++){
             if(jsonData[i].image !=null){
                 let thumbnail = jsonData[i].image.original
                 console.log(thumbnail)
@@ -45,7 +45,7 @@ class GamesCarousel extends Component {
             <div className="GamesCarousel" >
                 <Slider
                     dots={true}
-                    slidesToShow={4}
+                    slidesToShow={5}
                     arrows={true}
                 >
                     {urls}
