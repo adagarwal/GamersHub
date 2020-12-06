@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
     "@szhsin/react-menu": "^1.0.2",
     "@trendmicro/react-sidenav": "^0.5.0",
     "axios": "^0.21.0",
@@ -26,6 +27,7 @@
     "mongoose": "^5.10.11",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-bootstrap-modal": "^4.2.0",
     "react-sidenav": "^4.0.6",
     "react-slick": "^0.27.13",
     "slick-carousel": "^1.8.1",
