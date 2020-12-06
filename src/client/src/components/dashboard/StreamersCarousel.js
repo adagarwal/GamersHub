@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {Component} from "react";
-
+import Modal from 'react-bootstrap-modal';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -8,8 +8,8 @@ import Slider from "react-slick";
 
 
 class StreamersCarousel extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             data: null
         }
@@ -37,14 +37,15 @@ class StreamersCarousel extends Component {
             if (thumbnail != null) {
             thumbnail = thumbnail.replace('{width}','600');
             thumbnail = thumbnail.replace('{height}','400');
-            let redirectUrl = "http://www.twitch.tv/" + jsonData.data[i].user_name;
-            urls.push(<div key={i}> <a href={redirectUrl} target="_blank"> <img title={title} src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}}></img> </a> </div>)
+            let redirectUrl = jsonData.data[i].user_name;
+            urls.push(<div key={i} onClick={() => {this.props.openModal("http://player.twitch.tv/?channel="+redirectUrl+"&parent=localhost")}}>
+                <img title={title} src={thumbnail} className="image" style={{height:"20vh", width:"35vh"}} data-toggle="modal"></img></div>)
             }
         }
         return (
             <div>
                 {
-                    <div className="StreamersCarousel" >
+                    <div>
                             <Slider
                                 dots={true}
                                 slidesToShow={4}
