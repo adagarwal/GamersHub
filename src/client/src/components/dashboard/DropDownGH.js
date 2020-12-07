@@ -16,7 +16,11 @@ class DropDownGH extends Component {
     return(
       <div className="shadow h-auto w-56 absolute">
       <ul className="text-left" style={{position: "absolute", display: "block"}}>
-        <li role="menu" className={liCls} style = {{backgroundColor:"white"}} onClick = {this.onLogoutClick}>
+        <li role="menu" className={liCls} style = {{backgroundColor:"#23272a",
+          color:"#7289da",
+          borderStyle:"solid",
+          borderColor:"white",
+          width:"100px"}} onClick = {this.onLogoutClick}>
           Logout User
         </li>
       </ul>

@@ -1,16 +1,12 @@
 import React,{Component} from "react";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import Slider from "react-slick";
 import axios from "axios";
-import Card from "@material-ui/core/Card";
 
 class FollowedStreamers extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             data:null,
             dataset:[],
@@ -112,26 +108,26 @@ class FollowedStreamers extends Component {
 
         return (
             <div>
-                <div className="col col-sm-4" style={{ paddingLeft: "5vh", display:"inline", paddingTop:"3vh"}}>
-                    <Card variant={"outlined"} style={{borderRadius:"25px",
+                <div className="col col-sm-4" style={{ paddingLeft: "5vh", display:"inline"}}>
+                    <div style={{borderRadius:"25px",
                         width:"350px",
                         height:"350px", color: "#7289da", backgroundColor: "#23272a"}}>
-                        <h3 style={{marginTop:"150px"}}>Subsriptions: {this.state.total}</h3>
-                    </Card>
+                        <h3 style={{paddingTop:"10vh"}}>Subsriptions: {this.state.total}</h3>
+                    </div>
                 </div>
-                <div className="col col-sm-4" style={{ paddingLeft: "30vh", display:"inline", paddingTop:"3vh"}}>
-                    <Card variant={"outlined"} style={{borderRadius:"25px",
+                <div className="col col-sm-4" style={{ paddingLeft: "30vh", display:"inline"}}>
+                    <div  style={{borderRadius:"25px",
                         width:"350px",
                         height:"350px", color: "#7289da", backgroundColor: "#23272a"}}>
-                        <h3 style={{marginTop:"150px"}}>Viewers: {this.state.viewers}</h3>
-                    </Card>
+                        <h3 style={{paddingTop:"10vh"}}>Viewers: {this.state.viewers}</h3>
+                    </div>
                 </div>
-                <div className="col col-sm-4" style={{ paddingLeft: "30vh", display:"inline", paddingTop:"3vh"}}>
-                    <Card variant={"outlined"} style={{borderRadius:"25px",
+                <div className="col col-sm-4" style={{ paddingLeft: "30vh", display:"inline"}}>
+                    <div  style={{borderRadius:"25px",
                         width:"350px",
                         height:"350px", color: "#7289da", backgroundColor: "#23272a"}}>
-                        <h3 style={{marginTop:"150px"}}>Subsriptions: {this.state.total}</h3>
-                    </Card>
+                        <h3 style={{paddingTop:"10vh"}}>Subsriptions: {this.state.total}</h3>
+                    </div>
                 </div>
                 <div className="col s10" style={{ paddingLeft: "5vh", paddingTop: "3vh"}}>
                     <h6 className="left-align" style={{color:"#7289da", backgroundColor: "#23272a"}}><b>Followed Streamers</b></h6>
