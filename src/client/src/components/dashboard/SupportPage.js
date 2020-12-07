@@ -9,6 +9,13 @@ const useStyles = theme => ({
       margin: theme.spacing(1),
       width: '100ch',
       },
+    labelRoot: {
+      fontSize: 50,
+      color: "red",
+      "&$labelFocused": {
+        color: "purple"
+      }
+    },
   },
 });
 
@@ -26,13 +33,13 @@ class BasicTextFields extends Component {
   }
 
   setOnClick() {
-      ls.set("clicked", 1);
+      ls.set("clicked1", 1);
       this.setState({});
       return;
   }
   render() {
     const { classes } = this.props;
-    if(ls.get("clicked") === null)
+    if(ls.get("clicked1") === null)
     return (
     <form className={classes.root}  noValidate autoComplete="off">
       <div>
@@ -40,8 +47,9 @@ class BasicTextFields extends Component {
           id="outlined-helperText filled secondary"
           label="Name"
           variant="outlined"
-          color="secondary"
+          color="#23272a"
           width="100px"
+          style={{backgroundColor:"#7289DA"}}
       />
       </div>
       <div>
