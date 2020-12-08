@@ -48,7 +48,7 @@ class StreamersCarousel extends Component {
                     <div>
                             <Slider
                                 dots={true}
-                                slidesToShow={4}
+                                slidesToShow={3}
                                 arrows={true}
                             >
                                 {urls}

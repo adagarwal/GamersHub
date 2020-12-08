@@ -46,7 +46,7 @@ class TopGamesCarousel extends Component {
                     <div className="TopGamesCarousel" >
                             <Slider
                                 dots={true}
-                                slidesToShow={5}
+                                slidesToShow={4}
                                 arrows={true}
                             >
                                 {urls}

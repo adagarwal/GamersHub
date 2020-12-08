@@ -51,7 +51,7 @@ class Dashboard extends Component {
                     <div className="emdeb-responsive embed-responsive-16by9 z-depth-1-half" style={{height:"100%"}}>
                       <button style={{position:"absolute", display:"block", overflow:"hidden",
                         zIndex: 1050, webkitOverflowScrolling: "touch",
-                        height: "5vh", width: "15vh", left:"120vh"}} onClick={this.closeVideo}>Close Video</button>
+                        height: "5vh", width: "15vh", left:"120vh", backgroundColor:"#23272a", color:"#7289da"}} onClick={this.closeVideo}>Close Video</button>
                       <iframe className="embed-responsive-item"
                               src={this.state.url}
                               allowFullScreen={true}

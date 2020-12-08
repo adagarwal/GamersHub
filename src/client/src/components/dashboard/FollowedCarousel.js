@@ -126,7 +126,7 @@ class FollowedStreamers extends Component {
                     <div  style={{borderRadius:"25px",
                         width:"350px",
                         height:"350px", color: "#7289da", backgroundColor: "#23272a"}}>
-                        <h3 style={{paddingTop:"10vh"}}>Subsriptions: {this.state.total}</h3>
+                        <h3 style={{paddingTop:"10vh"}}>Active Screen Time: 3 hours</h3>
                     </div>
                 </div>
                 <div className="col s10" style={{ paddingLeft: "5vh", paddingTop: "3vh"}}>
@@ -140,7 +140,7 @@ class FollowedStreamers extends Component {
                 <div className="col s10" style={{ paddingLeft: "5vh", paddingTop: "3vh"}}>
                     <h6 className="left-align" style={{color:"#7289da", backgroundColor: "#23272a"}}><b>Recommended Live Streams</b></h6>
                     <div className="FollowedCarousel" >
-                        <Slider dots={true} slidesToShow={4} arrows={true}>
+                        <Slider dots={true} slidesToShow={3} arrows={true}>
                             {reco_urls}
                         </Slider>
                     </div>
