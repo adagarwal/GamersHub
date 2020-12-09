@@ -15,6 +15,7 @@ import SteamHome from "./components/dashboard/SteamHome";
 import EpicHome from "./components/dashboard/EpicHome";
 import TwitchHome from "./components/dashboard/TwitchHome";
 import SupportHome from "./components/dashboard/SupportHome";
+import DiscordHome from "./components/dashboard/DiscordHome";
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -47,6 +48,7 @@ class App extends Component {
               <PrivateRoute exact path="/steamhome" component={SteamHome} />
               <PrivateRoute exact path="/epichome" component={EpicHome} />
               <PrivateRoute exact path="/twitchhome" component={TwitchHome} />
+              <PrivateRoute exact path="/discordhome" component={DiscordHome} />
               <PrivateRoute exact path="/supporthome" component={SupportHome} />
             </Switch>
           </div>

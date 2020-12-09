@@ -4,6 +4,7 @@ import HelpLogo from './HelpLogo.png';
 import SteamLogo from './SteamLogo.png';
 import EpicLogo from './EpicLogo.png';
 import TwitchLogo from './TwitchLogo.png';
+import DiscordLogo from './DiscordLogo.png'
 import Dashboard from './Dashboard.js';
 import { Link } from 'react-router-dom';
 
@@ -52,6 +53,16 @@ class NavPane extends Component {
                         <button className="left-align" style={{ border: "none", backgroundColor: "#2c2f33", paddingLeft: "0px", marginLeft: "0vh" }}>
                             <div className="left-align">
                                 <img src={TwitchLogo} style={{ height: "5vh", marginTop: "2vh" }} />
+                            </div>
+                        </button>
+                    </Link>
+                </div>
+
+                <div className="left-align" style={{ paddingTop: "35px", paddingLeft: "40px" }}>
+                    <Link to="/discordhome">
+                        <button className="left-align" style={{ border: "none", backgroundColor: "#2c2f33", paddingLeft: "0px", marginLeft: "0vh" }}>
+                            <div className="left-align">
+                                <img src={DiscordLogo} style={{ height: "5vh", marginTop: "2vh" }} />
                             </div>
                         </button>
                     </Link>
